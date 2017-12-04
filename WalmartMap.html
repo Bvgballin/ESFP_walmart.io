@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>ESFP to Walmarts</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+        
+        <script src="./json/md_route1.js"></script>
+        <script src="./json/md_route2.js"></script>
+        <script src="./json/md_route3.js"></script>
+        <script src="./json/md1_lines.js"></script>
+        <script src="./json/md2_lines.js"></script>
+        <script src="./json/md3_lines.js"></script>
+        <script src="./json/delaware_route.js"></script>
+        <script src="./json/delaware_lines.js"></script>
+        <script src="./json/v_route1.js"></script>
+        <script src="./json/v_route2.js"></script>
+        <script src="./json/v_route3.js"></script>
+        <script src="./json/v_route4.js"></script>
+        <script src="./json/v_route5.js"></script>
+        <script src="./json/v1_lines.js"></script>
+        <script src="./json/v2_lines.js"></script>
+        <script src="./json/v3_lines.js"></script>
+        <script src="./json/v4_lines.js"></script>
+        <script src="./json/v5_lines.js"></script>
+        
+        
+        
+        
+        <style>
+            #mapdiv{
+                height:800px;
+                
+             }
+            #line{ 
+                stroke: green;
+                fill: none;
+                stroke-dasharray: 10,10; 
+                stroke-width: 5;  
+
+             }
+        </style>
+    
+    </head>
+    <body>
+        <div id="mapdiv" class="col-md-12"></div>
+        
+        
+        <script>
+            var mymap = L.map('mapdiv')
+                mymap.setView([38.294232, -75.593505],7);
+            
+            var backgroundlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+                mymap.addLayer(backgroundlayer);
+            
+            var federalsburg = L.marker([38.690344, -75.764380]).bindPopup('Federalsburg').openPopup().addTo(mymap);
+            
+            
+            var mdOptions = {
+				radius: 8,
+				fillColor: "#ADFF2F",
+				color: "#000",
+				weight: 1,
+				opacity: 1,
+				fillOpacity: 0.8
+                }
+            
+            
+            var DelOptions = {
+				radius: 8,
+				fillColor: "#9932CC",
+				color: "#000",
+				weight: 1,
+				opacity: 1,
+				fillOpacity: 0.8
+                }
+            var VaOptions = {
+				radius: 8,
+				fillColor: "#A52A2A",
+				color: "#000",
+				weight: 1,
+				opacity: 1,
+				fillOpacity: 0.8
+                }
+            
+            
+            var md_route1 = L.geoJson(md_route1, {pointToLayer: function (feature, latlng) {
+                var str = "<h3 class = 'text-left'>Store Address:</h3>";
+                str += "<h4>"+feature.properties.store+"</h4><hr>";
+                str += "<h3 class = 'text-left'>Order in Route:</h3>";
+                str += "<h4>"+feature.properties.order_+"</h4><hr>";
+                return L.circleMarker(latlng,mdOptions).bindPopup(str)
+				}});
+            
+            var md_route2 = L.geoJson(md_route2, {pointToLayer: function (feature, latlng) {
+                var str = "<h3 class = 'text-left'>Store Address:</h3>";
+                str += "<h4>"+feature.properties.store+"</h4><hr>";
+                str += "<h4>"+feature.properties.order_+"</h4><hr>";
+                return L.circleMarker(latlng,mdOptions).bindPopup(str)
+				}});
+        
+            var md_route3 = L.geoJson(md_route3, {pointToLayer: function (feature, latlng) {
+               var str = "<h3 class = 'text-left'>Store Address:</h3>";
+                str += "<h4>"+feature.properties.store+"</h4><hr>";
+                str += "<h3 class = 'text-left'>Order in Route:</h3>";
+                str += "<h4>"+feature.properties.order_+"</h4><hr>";
+                return L.circleMarker(latlng,mdOptions).bindPopup(str)
+                }});
+        
+            var md_stores= L.layerGroup([md_route1,md_route2,md_route3]);
+            
+            var delaware = L.geoJson(d_route, {pointToLayer: function (feature, latlng) {
+                var str = "<h3 class = 'text-left'>Store Address:</h3>";
+                str += "<h4>"+feature.properties.store+"</h4><hr>";
+                str += "<h3 class = 'text-left'>Order in Route:</h3>";
+                str += "<h4>"+feature.properties.order_+"</h4><hr>";
+                return L.circleMarker(latlng,DelOptions).bindPopup(str)
+                }});
+            
+            var v_route1 = L.geoJson(v_route1, {pointToLayer: function (feature, latlng) {
+               var str = "<h3 class = 'text-left'>Store Address:</h3>";
+                str += "<h4>"+feature.properties.store+"</h4><hr>";
+                str += "<h3 class = 'text-left'>Order in Route:</h3>";
+                str += "<h4>"+feature.properties.oder+"</h4><hr>";
+                return L.circleMarker(latlng,VaOptions).bindPopup(str)
+                }});
+            
+            var v_route2 = L.geoJson(v_route2, {pointToLayer: function (feature, latlng) {
+                var str = "<h3 class = 'text-left'>Store Address:</h3>";
+                str += "<h4>"+feature.properties.store+"</h4><hr>";
+                str += "<h3 class = 'text-left'>Order in Route:</h3>";
+                str += "<h4>"+feature.properties.order_+"</h4><hr>";
+                return L.circleMarker(latlng,VaOptions).bindPopup(str)
+                }});
+            
+            var v_route3 = L.geoJson(v_route3, {pointToLayer: function (feature, latlng) {
+                var str = "<h3 class = 'text-left'>Store Address:</h3>";
+                str += "<h4>"+feature.properties.store+"</h4><hr>";
+                str += "<h3 class = 'text-left'>Order in Route:</h3>";
+                str += "<h4>"+feature.properties.order_+"</h4><hr>";
+                return L.circleMarker(latlng,VaOptions).bindPopup(str)
+                }});
+            var v_route4 = L.geoJson(v_route4, {pointToLayer: function (feature, latlng) {
+                var str = "<h3 class = 'text-left'>Store Address:</h3>";
+                str += "<h4>"+feature.properties.store+"</h4><hr>";
+                str += "<h3 class = 'text-left'>Order in Route:</h3>";
+                str += "<h4>"+feature.properties.order_+"</h4><hr>";
+                return L.circleMarker(latlng,VaOptions).bindPopup(str)
+                }});
+            var v_route5 = L.geoJson(v_route5, {pointToLayer: function (feature, latlng) {
+                var str = "<h3 class = 'text-left'>Store Address:</h3>";
+                str += "<h4>"+feature.properties.store+"</h4><hr>";
+                str += "<h3 class = 'text-left'>Order in Route:</h3>";
+                str += "<h4>"+feature.properties.order_+"</h4><hr>";
+                return L.circleMarker(latlng,VaOptions).bindPopup(str)
+                }});
+            
+            
+            var virginia_stores = L.layerGroup([v_route1,v_route2,v_route3,v_route4,v_route5]);
+            
+            var md1_lines = L.geoJson(md1_lines, { className: 'line' })
+            
+            var md2_lines = L.geoJson(md2_lines, { className: 'line' })
+            
+            var md3_lines = L.geoJson(md3_lines, { className: 'line' })
+            
+            var d_lines = L.geoJson(d_lines, { className: 'line' })
+            
+            var v1_lines = L.geoJson(v1_lines, { className: 'line' })
+            
+            var v2_lines = L.geoJson(v2_lines, { className: 'line' })
+            
+            var v3_lines = L.geoJson(v3_lines, { className: 'line' })
+            
+            var v4_lines = L.geoJson(v4_lines, { className: 'line' })
+            
+            var v5_lines = L.geoJson(v5_lines, { className: 'line' })
+            
+            var lines = {
+                "Maryland Route 1": md1_lines,
+                "Maryland Route 2": md2_lines,
+                "Maryland Route 3": md3_lines,
+                "Delaware Route": d_lines,
+                "Virginia Route 1": v1_lines,
+                "Virginia Route 2": v2_lines,
+                "Virginia Route 3": v3_lines,
+                "Virginia Route 4": v4_lines,
+                "Virginia Route 5": v5_lines
+            }           
+            
+            var stores = {
+                "Maryland Stores:": md_stores,
+                "Virginia Stores:": virginia_stores,
+                "Delware Stores:": delaware
+            }
+            
+           
+            
+            L.control.layers(stores,lines).addTo(mymap);
+        
+        
+        </script>
+    
+    
+    
+    
+    
+    </body>
+</html>
+    

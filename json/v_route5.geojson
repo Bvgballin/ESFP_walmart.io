@@ -1,0 +1,20 @@
+{
+"type": "FeatureCollection",
+"name": "v_route5",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 0, "store": "8386 Sudley Rd Manassas, VA 20109", "order_": 8 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.5, 38.77532958984375 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "9401 Liberia Ave Manassas, VA 20111", "order_": 9 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.44720458984375, 38.75408935546875 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "950 Edwards Ferry Road Leesburg, VA 20176", "order_": 2 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.53900146484375, 39.1182861328125 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "700 James Madison Hwy Warrenton, VA 20186", "order_": 7 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.78912353515625, 38.6981201171875 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "10 Riverton Commons Dr Front Royal, VA 22630", "order_": 5 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -78.18701171875, 38.96368408203125 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "201 Maranto Manor Dr Winchester, VA 22602", "order_": 6 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -78.1494140625, 39.084716796875 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "6000 Burke Commons Rd Burke, VA 22015", "order_": 12 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.299072265625, 38.7896728515625 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "11181 Lee Hwy Fairfax, VA 22030", "order_": 11 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.33087158203125, 38.85028076171875 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "13059 Fair Lakes Parkway Fairfax, VA 22033", "order_": 10 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.39569091796875, 38.85467529296875 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "45415 Dulles Crossing Plaza Sterling, VA 20166", "order_": 1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.42657470703125, 39.02447509765625 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "4368 Chantilly Shopping Center Chantilly, VA 20151", "order_": 4 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.44219970703125, 38.8895263671875 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "24635 Dulles Landing Dr Sterling, VA 20166", "order_": 3 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -77.5228271484375, 38.93670654296875 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "store": "Federalsburg", "order_": 0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -75.764871064532358, 38.690894700073471 ] ] } }
+]
+}
